@@ -72,6 +72,17 @@ set nowritebackup
 set noswapfile
 " backup设置end -----
 
+" ----- map start -----
+map <Up> <Nop>
+imap <Up> <Nop>
+map <Down> <Nop>
+imap <Down> <Nop>
+map <Left> <Nop>
+imap <Left> <Nop>
+map <Right> <Nop>
+imap <Right> <Nop>
+" ----- map end -----
+
 " ----- vim-plugin start -----
 call plug#begin('~/.vim/plugged')
 Plug 'ap/vim-css-color'
