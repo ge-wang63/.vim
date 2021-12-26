@@ -28,3 +28,26 @@ i 在新的水平拆分窗口中打开所选文件
 s 在新的垂直拆分窗口中打开所选文件  
 A 全屏显示NERDTree，活着关闭全凭  
 C 将根目录设置为光标所在路径
+
+
+### ctrlp
+
+常用命令：
+
+ctrl-d: 切换是查找文件还是查找整个路径
+
+
+排除不进行查找的文件或者目录：
+
+```vim
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+```
+
+
+### smartim
+
+结局Mac平台切换Normal模式自动切换英文输入法问题

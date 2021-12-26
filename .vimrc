@@ -3,7 +3,7 @@
 set nu
 " set nonu
 " 显示--INSERT--等字眼在左下角的状态栏
-" set showmode
+set showmode
 set showcmd
 " 禁止显示缩进、换行符等
 set nolist
@@ -86,9 +86,12 @@ imap <Right> <Nop>
 " ----- vim-plugin start -----
 call plug#begin('~/.vim/plugged')
 Plug 'ap/vim-css-color'
-Plug 'vim-airline/vim-airline'
+" airline 模式切换慢，干掉了
+" Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'plasticboy/vim-markdown'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ybian/smartim'
 call plug#end()
 " ----- vim-plugin end -----
 
