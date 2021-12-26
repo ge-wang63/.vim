@@ -50,4 +50,4 @@ let g:ctrlp_custom_ignore = {
 
 ### smartim
 
-结局Mac平台切换Normal模式自动切换英文输入法问题
+解决Mac平台切换Normal模式自动切换英文输入法问题
