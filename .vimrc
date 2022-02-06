@@ -52,10 +52,11 @@ set splitright
 " color设置start -----
 " 设置/取消语法高亮显示
 syntax on
-" 配色方案
-" colorscheme darkblue
 " 设置背景颜色色调
-" set bg=light
+set background=dark
+set t_Co=256
+" 配色方案
+colorscheme solarized 
 " color设置end -----
 
 " filetype设置start -----
@@ -73,14 +74,14 @@ set noswapfile
 " backup设置end -----
 
 " ----- map start -----
-map <Up> <Nop>
-imap <Up> <Nop>
-map <Down> <Nop>
-imap <Down> <Nop>
-map <Left> <Nop>
-imap <Left> <Nop>
-map <Right> <Nop>
-imap <Right> <Nop>
+noremap <Up> brew install picgo --cask<Nop>
+inoremap <Up> <Nop>
+noremap <Down> <Nop>
+inoremap <Down> <Nop>
+noremap <Left> <Nop>
+inoremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Right> <Nop>
 " ----- map end -----
 
 " ----- vim-plugin start -----
@@ -92,6 +93,7 @@ Plug 'preservim/nerdtree'
 Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ybian/smartim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 " ----- vim-plugin end -----
 
@@ -110,4 +112,3 @@ endif
 " 共享剪贴板
 set clipboard+=unnamed
 " ----- 杂项end -----
-
