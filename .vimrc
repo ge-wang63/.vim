@@ -2,6 +2,8 @@
 " 设置/取消 行号
 set nu
 " set nonu
+" 相对行号
+set relativenumber
 " 显示--INSERT--等字眼在左下角的状态栏
 set showmode
 set showcmd
@@ -17,12 +19,16 @@ set cursorline
 " set cursorcolumn
 " 显示标尺（右下角的状态栏）
 set ruler 
+
+set hidden
 " ----- appearance end -----
 
 " ----- 搜索设置start -----
-" 设置是否将查找的字符串进行反白
+" 搜索高亮
 set hlsearch
 "  set nohlsearch
+" 搜索增量高亮
+set incsearch
 " 搜寻忽略大小写
 set ignorecase
 " 当搜寻的单词有大写就会忽略ignorecase
@@ -73,8 +79,11 @@ set nowritebackup
 set noswapfile
 " backup设置end -----
 
-" ----- map start -----
-noremap <Up> brew install picgo --cask<Nop>
+" >>> map start >>>
+" 设置leader键
+let mapleader=" "
+" 关闭方向键
+noremap <Up> <Nop>
 inoremap <Up> <Nop>
 noremap <Down> <Nop>
 inoremap <Down> <Nop>
@@ -82,22 +91,37 @@ noremap <Left> <Nop>
 inoremap <Left> <Nop>
 noremap <Right> <Nop>
 inoremap <Right> <Nop>
-" ----- map end -----
+
+" fzf 键盘映射
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>/ :BLines<CR>
+nnoremap <silent> <Leader>' :Marks<CR>
+nnoremap <silent> <Leader>g :Commits<CR>
+nnoremap <silent> <Leader>H :Helptags<CR>
+nnoremap <silent> <Leader>hh :History<CR>
+nnoremap <silent> <Leader>h: :History:<CR>
+nnoremap <silent> <Leader>h/ :History/<CR>
+" 搜索增量取消
+nnoremap <esc><esc> :noh<return><esc>
+" <<< map end <<<
 
 " ----- vim-plugin start -----
 call plug#begin('~/.vim/plugged')
+Plug 'luochen1990/rainbow'
 Plug 'ap/vim-css-color'
-" airline 模式切换慢，干掉了
-" Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
-Plug 'plasticboy/vim-markdown'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ybian/smartim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
+Plug 'junegunn/vim-peekaboo'
 call plug#end()
 " ----- vim-plugin end -----
 
 " ----- 杂项start -----
+"  关闭兼容模式
+set nocp
 " 距离顶部/底部5行就开始滚动
 set scrolloff=5
 " 设定默认编码
@@ -131,3 +155,5 @@ function! JsonFormat()
     endif
 endfunction
 " ----- 自定义函数 end -----
+
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow

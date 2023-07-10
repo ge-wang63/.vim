@@ -1,53 +1,54 @@
-# .vim
-vim设定
+# vim设定
 
 ## 插件
 
-### nerdtree
+### Plug 'junegunn/fzf.vim'
 
-map映射：
+#### 语法
+- ^ 表示前缀精确匹配。要搜索一个以"welcome"开头的短语：^welcom。
+- $ 表示后缀精确匹配。要搜索一个以"my friends"结尾的短语：friends$。
+- ' 表示精确匹配。要搜索短语"welcom my friends"：'welcom my friends。
+- | 表示"或者"匹配。要搜索"friends"或"foes"：friends | foes。
+- ! 表示反向匹配。要搜索一个包含"welcome"但不包含"friends"的短语：welcome !friends。
 
-```vim
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
-```
+#### 用法
+| Command                | List                                                                                  |
+| ---                    | ---                                                                                   |
+| `:Files [PATH]`        | Files (runs `$FZF_DEFAULT_COMMAND` if defined)                                        |
+| `:GFiles [OPTS]`       | Git files (`git ls-files`)                                                            |
+| `:GFiles?`             | Git files (`git status`)                                                              |
+| `:Buffers`             | Open buffers                                                                          |
+| `:Colors`              | Color schemes                                                                         |
+| `:Ag [PATTERN]`        | [ag][ag] search result (`ALT-A` to select all, `ALT-D` to deselect all)               |
+| `:Rg [PATTERN]`        | [rg][rg] search result (`ALT-A` to select all, `ALT-D` to deselect all)               |
+| `:RG [PATTERN]`        | [rg][rg] search result; relaunch ripgrep on every keystroke                           |
+| `:Lines [QUERY]`       | Lines in loaded buffers                                                               |
+| `:BLines [QUERY]`      | Lines in the current buffer                                                           |
+| `:Tags [QUERY]`        | Tags in the project (`ctags -R`)                                                      |
+| `:BTags [QUERY]`       | Tags in the current buffer                                                            |
+| `:Marks`               | Marks                                                                                 |
+| `:Jumps`               | Jumps                                                                                 |
+| `:Windows`             | Windows                                                                               |
+| `:Locate PATTERN`      | `locate` command output                                                               |
+| `:History`             | `v:oldfiles` and open buffers                                                         |
+| `:History:`            | Command history                                                                       |
+| `:History/`            | Search history                                                                        |
+| `:Snippets`            | Snippets ([UltiSnips][us])                                                            |
+| `:Commits [LOG_OPTS]`  | Git commits (requires [fugitive.vim][f])                                              |
+| `:BCommits [LOG_OPTS]` | Git commits for the current buffer; visual-select lines to track changes in the range |
+| `:Commands`            | Commands                                                                              |
+| `:Maps`                | Normal mode mappings                                                                  |
+| `:Helptags`            | Help tags <sup id="a1">[1](#helptags)</sup>                                           |
+| `:Filetypes`           | File types
 
-常用命令：
-
-o 进入目录或者打开文件  
-t 在新的标签页中打开所选文件  
-q 关闭NERDTree  
-P 跳到根节点  
-p 跳到父节点  
-R 刷新当前根路径  
-r 刷新光标所在目录  
-I 显示或关闭隐藏文件  
-i 在新的水平拆分窗口中打开所选文件  
-s 在新的垂直拆分窗口中打开所选文件  
-A 全屏显示NERDTree，活着关闭全凭  
-C 将根目录设置为光标所在路径
-
-
-### ctrlp
-
-常用命令：
-
-ctrl-d: 切换是查找文件还是查找整个路径
-
-
-排除不进行查找的文件或者目录：
-
-```vim
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-```
-
-
-### smartim
-
-解决Mac平台切换Normal模式自动切换英文输入法问题
+#### 键盘映射
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>/ :BLines<CR>
+nnoremap <silent> <Leader>' :Marks<CR>
+nnoremap <silent> <Leader>g :Commits<CR>
+nnoremap <silent> <Leader>H :Helptags<CR>
+nnoremap <silent> <Leader>hh :History<CR>
+nnoremap <silent> <Leader>h: :History:<CR>
+nnoremap <silent> <Leader>h/ :History/<CR>
