@@ -1,3 +1,15 @@
+call plug#begin('~/.vim/plugged')
+  Plug 'luochen1990/rainbow'
+  Plug 'ap/vim-css-color'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
+  Plug 'junegunn/vim-peekaboo'
+  Plug 'sheerun/vim-polyglot'
+call plug#end()
+
+" >> rainbow config start >>
 let g:rainbow_active = 1
 
 let g:rainbow_conf = {
@@ -31,3 +43,9 @@ let g:rainbow_conf = {
 \        'nerdtree': 0, 
 \    }
 \}
+" << rainbow config end <<
+
+" >> vim-markdown start >>
+" 禁用折叠
+let g:vim_markdown_folding_disabled = 1
+" << vim-markdown end <<
