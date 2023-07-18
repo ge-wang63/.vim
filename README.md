@@ -43,7 +43,7 @@ let g:rainbow_conf = {
 \		'css': 0, "disable this plugin for css files
 \		'nerdtree': 0, "rainbow is conflicting with NERDTree, creating extra parentheses
 \	}
-\}``
+\}
 ```
 
 - 'guifgs': 一个guifg的列表 (:h highlight-guifg), 即GUI界面的括号颜色, 将按顺序循环使用

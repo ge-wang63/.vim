@@ -36,17 +36,8 @@ endif
 set clipboard+=unnamed
 
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
-" <<< 杂项end <<<
 
-" >>>  vim-plugin start >>>
-call plug#begin('~/.vim/plugged')
-  Plug 'luochen1990/rainbow'
-  Plug 'ap/vim-css-color'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
-  Plug 'junegunn/vim-peekaboo'
-  Plug 'sheerun/vim-polyglot'
-call plug#end()
-" >>> vim-plugin end >>>
+" <<< 杂项end <<<
+"
+"
+source ~/.vim/plugin/plugins.vim
