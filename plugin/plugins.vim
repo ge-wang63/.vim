@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
   Plug 'junegunn/vim-peekaboo'
   Plug 'sheerun/vim-polyglot'
+  Plug 'preservim/nerdtree'
 call plug#end()
 
 " >> rainbow config start >>
@@ -45,7 +46,3 @@ let g:rainbow_conf = {
 \}
 " << rainbow config end <<
 
-" >> vim-markdown start >>
-" 禁用折叠
-let g:vim_markdown_folding_disabled = 1
-" << vim-markdown end <<
