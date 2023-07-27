@@ -154,7 +154,9 @@ q       关闭 NerdTree 窗口
 ```
 
 #### 键盘映射
+```
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
+```
 
