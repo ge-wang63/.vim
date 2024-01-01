@@ -59,8 +59,9 @@ let g:rainbow_conf = {
 
 #### 语法
 - ^ 表示前缀精确匹配。要搜索一个以"welcome"开头的短语：^welcom。
-- $ 表示后缀精确匹配。要搜索一个以"my friends"结尾的短语：friends$。
+- $ 表示后缀精确匹配。要搜索一个以"friends"结尾的短语：friends$。
 - ' 表示精确匹配。要搜索短语"welcom my friends"：'welcom my friends。
+- . 表示后缀精确匹配。要搜索map3文件：'.mp3'。
 - | 表示"或者"匹配。要搜索"friends"或"foes"：friends | foes。
 - ! 表示反向匹配。要搜索一个包含"welcome"但不包含"friends"的短语：welcome !friends。
 
@@ -106,6 +107,15 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " nnoremap <silent> <Leader>hh :History<CR>
 " nnoremap <silent> <Leader>h: :History:<CR>
 " nnoremap <silent> <Leader>h/ :History/<CR>
+```
+
+#### 配置
+```
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 ```
 
 ### Plug 'preservim/nerdtree'
