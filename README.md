@@ -4,7 +4,7 @@
 安装插件开启的配置、键盘映射，方便查阅
 
 1. [rainbow](#luochen1990rainbow)
-2. [fzf.vim](#junegunnfzfvim)
+2. [fzf](#junegunnfzfvim)
 3. [nerdtree](#preservimnerdtree)
 4. [vim-markdown](#preservimvim-markdown)
 5. [vim-markdown-toc](#mzloginvim-markdown-toc)
