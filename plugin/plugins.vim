@@ -10,6 +10,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'godlygeek/tabular'
+  Plug 'preservim/vim-markdown'
+  Plug 'mzlogin/vim-markdown-toc'
 call plug#end()
 
 " >> rainbow config start >>
@@ -57,4 +60,20 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " << vim-airline end <<
 
 " >> fzf start
+" Configuration
+let g:fzf_layout = { 'down': '40%' }
 " << fzf end
+
+" >> vim-markdown >>
+set conceallevel=2
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_override_foldtext = 0
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_borderless_table = 1
+" >> vim-markdown >>
