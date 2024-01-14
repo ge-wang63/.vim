@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'preservim/vim-markdown'
   Plug 'mzlogin/vim-markdown-toc'
   Plug 'svermeulen/vim-yoink'
+  Plug 'tpope/vim-surround'
 call plug#end()
 
 " >> rainbow config start >>

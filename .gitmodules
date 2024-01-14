@@ -1,0 +1,45 @@
+[submodule "plugged/vim-yoink"]
+	path = plugged/vim-yoink
+	url = git@github.com:svermeulen/vim-yoink.git
+[submodule "plugged/vim-surround"]
+	path = plugged/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "plugged/vim-markdown"]
+	path = plugged/vim-markdown
+	url = git@github.com:preservim/vim-markdown.git
+[submodule "plugged/vim-markdown-toc"]
+	path = plugged/vim-markdown-toc
+	url = git@github.com:mzlogin/vim-markdown-toc.git
+[submodule "plugged/vim-polyglot"]
+	path = plugged/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "plugged/vim-peekaboo"]
+	path = plugged/vim-peekaboo
+	url = git@github.com:junegunn/vim-peekaboo.git
+[submodule "plugged/vim-css-color"]
+	path = plugged/vim-css-color
+	url = git@github.com:ap/vim-css-color.git
+[submodule "plugged/vim-colors-solarized"]
+	path = plugged/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "plugged/vim-airline"]
+	path = plugged/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "plugged/vim-airline-themes"]
+	path = plugged/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
+[submodule "plugged/tabular"]
+	path = plugged/tabular
+	url = git@github.com:godlygeek/tabular.git
+[submodule "plugged/rainbow"]
+	path = plugged/rainbow
+	url = git@github.com:luochen1990/rainbow.git
+[submodule "plugged/nerdtree"]
+	path = plugged/nerdtree
+	url = git@github.com:preservim/nerdtree.git
+[submodule "plugged/fzf"]
+	path = plugged/fzf
+	url = git@github.com:junegunn/fzf.git
+[submodule "plugged/fzf.vim"]
+	path = plugged/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git

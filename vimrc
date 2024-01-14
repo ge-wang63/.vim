@@ -1,12 +1,5 @@
 " >>> 杂项start >>>
 
-" tab缩进距离
-set softtabstop=2
-" 一般模式下移动距离
-set shiftwidth=2
-" 使用空格做缩进
-set expandtab
-
 " 显示标签打开文件名
 set showtabline=2 
 " 水平视窗设置在底部

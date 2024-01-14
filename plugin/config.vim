@@ -4,6 +4,14 @@ set nu
 " set nonu
 " 相对行号
 set relativenumber
+"
+" tab缩进距离
+set softtabstop=2
+" 一般模式下移动距离
+set shiftwidth=2
+" 使用空格做缩进
+set expandtab
+"
 " 显示--INSERT--等字眼在左下角的状态栏
 set showmode
 set showcmd
@@ -16,12 +24,11 @@ set linebreak
 " 突出显示当前行
 set cursorline
 " 突出显示当前列
-" set cursorcolumn
+set cursorcolumn
 " 显示标尺（右下角的状态栏）
-" ----- appearance end -----
 set ruler 
-
 set hidden
+
 " << appearance config end <<
 "
 "
