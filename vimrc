@@ -31,7 +31,3 @@ set clipboard+=unnamed
 set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 " <<< 杂项end <<<
-"
-"
-source ~/.vim/plugin/config.vim
-source ~/.vim/plugin/plugins.vim

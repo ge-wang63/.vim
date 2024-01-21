@@ -1,22 +1,3 @@
-call plug#begin('~/.vim/plugged')
-  Plug 'luochen1990/rainbow'
-  Plug 'ap/vim-css-color'
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
-  Plug 'junegunn/vim-peekaboo'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'preservim/nerdtree'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'godlygeek/tabular'
-  Plug 'preservim/vim-markdown'
-  Plug 'mzlogin/vim-markdown-toc'
-  Plug 'svermeulen/vim-yoink'
-  Plug 'tpope/vim-surround'
-call plug#end()
-
 " >> rainbow config start >>
 let g:rainbow_active = 1
 
@@ -80,7 +61,6 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " >> NERDTree start >>
 " mappings
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 " << NERDTree end <<
