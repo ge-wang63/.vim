@@ -30,8 +30,10 @@ au FocusGained,BufEnter * silent! checktime
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = "\<space\>"
+let mapleader = "\<Space>"
 
+" Set nocompatible mode with VI
+set nocompatible
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -67,6 +69,9 @@ set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch
+
+" Disable highlight when <esc> is pressed double
+map <esc><esc> :noh<return><esc>
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -174,9 +179,6 @@ set clipboard+=unnamed
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable highlight when <esc> is pressed double
-map <esc><esc> :noh<return><esc>
-
 " Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
