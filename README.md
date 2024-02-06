@@ -289,7 +289,7 @@ nmap gP <plug>(YoinkPaste_gP)
 
         :Yanks
 
--   Delete history. This will reduce the history down to 1 entry taken from the default registe 
+-   Delete history. This will reduce the history down to 1 entry taken from the default registe
 
         :ClearYanks
 

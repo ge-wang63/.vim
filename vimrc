@@ -32,6 +32,10 @@ au FocusGained,BufEnter * silent! checktime
 " like <leader>w saves the current file
 let mapleader = "\<Space>"
 
+"esc is too far away 
+inoremap jj <esc>
+vnoremap jj <esc>
+
 " Set nocompatible mode with VI
 set nocompatible
 
