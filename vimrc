@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
-"       wang ge - @FuPingstar
+"       wang ge - @wangge63
 "
 " Sections:
 "    -> General
@@ -115,7 +115,7 @@ syntax enable
 set regexpengine=0
 
 " Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == "gnome-teminal"
+if $COLORTERM == "gnome-terminal"
 	set t_CO=256
 endif
 
