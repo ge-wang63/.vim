@@ -190,11 +190,11 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Show header tabline
-set showtabline=2 
+set showtabline=2
 
 " Control the position of new window
-set splitbelow 
-set splitright 
+set splitbelow
+set splitright
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,4 +217,3 @@ fun! CleanExtraSpaces()
     call setpos('.', save_cursor)
     call setreg('/', old_query)
 endfun
-
