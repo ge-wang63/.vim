@@ -1,8 +1,131 @@
-# vim设定
+# Vim 配置
 
-本项目使用 Vim 8 原生包管理机制（`pack/all/start/`），所有插件通过 git submodule 管理。
+个人 Vim 配置仓库，基于 **Vim 8 原生包管理** + **Git Submodule** 管理插件，使用 Solarized Dark 主题，面向日常编码与文档编写场景。
 
-## 插件目录
+## 设计理念
+
+- **原生优先**：只依赖 Vim 8 内置的 `packpath` 机制加载插件，不引入第三方插件管理器
+- **轻量可维护**：插件通过 Git Submodule 锁定版本，配置文件按职责拆分为 `vimrc`（通用设置）和 `plugin/plugins.vim`（插件配置）
+- **键盘效率**：以 `<Space>` 为 Leader 键、`jj` 替代 Escape、完全禁用方向键强制 `hjkl` 导航
+- **无冗余**：关闭 swap/backup/undo 文件，依赖 Git 做版本管理
+
+## 目录结构
+
+```
+~/.vim/
+├── vimrc                          # 主配置文件（通用设置、UI、缩进、映射、自动命令）
+├── plugin/
+│   └── plugins.vim                # 各插件配置（键盘映射、选项）
+├── pack/
+│   └── all/
+│       └── start/                 # 插件目录（Vim 8 原生包路径，启动时自动加载）
+│           ├── fzf/               #   模糊查找器
+│           ├── fzf.vim/           #   fzf Vim 集成
+│           ├── nerdtree/          #   文件树浏览器
+│           ├── rainbow/           #   彩虹括号
+│           ├── tabular/           #   文本对齐
+│           ├── vim-airline/       #   状态栏
+│           ├── vim-airline-themes/#   状态栏主题
+│           ├── vim-colors-solarized/# Solarized 配色
+│           ├── vim-css-color/     #   CSS 颜色预览
+│           ├── vim-markdown/      #   Markdown 增强
+│           ├── vim-markdown-toc/  #   Markdown 目录生成
+│           ├── vim-peekaboo/      #   寄存器预览
+│           ├── vim-polyglot/      #   多语言语法包
+│           ├── vim-surround/      #   环绕字符操作
+│           └── vim-yoink/         #   粘贴历史管理
+├── .gitignore                     # Git 忽略规则
+├── .gitmodules                    # Git Submodule 定义（插件上游仓库与版本）
+├── README.md                      # 本文档
+└── LICENSE                        # Apache 2.0
+```
+
+## 安装
+
+### 前置要求
+
+- **Vim 8.0+**（需支持 `packpath`）
+- **Git**（用于克隆仓库和 Submodule）
+- **fzf** 命令行工具：`brew install fzf`（macOS）或自行编译
+- **ripgrep (rg)**：`brew install ripgrep` — fzf `:Rg` 全文搜索依赖
+- **Powerline 字体**：推荐安装 [Nerd Font](https://www.nerdfonts.com/) 系列字体，确保 vim-airline 图标正常显示
+
+### 首次安装
+
+```bash
+# 1. 备份已有配置（如有）
+mv ~/.vim ~/.vim.bak  2>/dev/null
+mv ~/.vimrc ~/.vimrc.bak 2>/dev/null
+
+# 2. 克隆仓库
+git clone --recurse-submodules https://github.com/ge-wang63/.vim.git ~/.vim
+
+# 3. 链接 vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
+
+# 4. 启动 Vim
+vim
+```
+
+### 安装 fzf 命令行工具
+
+```bash
+# macOS
+brew install fzf
+
+# 或从 submodule 构建
+cd ~/.vim/pack/all/start/fzf && ./install
+```
+
+## 插件管理
+
+### 插件机制
+
+所有插件位于 `pack/all/start/`，Vim 8 会自动搜索该路径并加载。每个插件通过 Git Submodule 锁定到上游仓库的特定提交版本，确保可复现性。
+
+```
+Vim 启动 → 扫描 pack/*/start/ → 加载所有插件 → 加载 plugin/*.vim
+```
+
+### 查看插件状态
+
+```bash
+cd ~/.vim
+git submodule status        # 查看所有插件当前版本
+```
+
+### 更新插件
+
+```bash
+cd ~/.vim
+git submodule update --remote --recursive   # 更新所有插件到上游最新版
+git add -A && git commit -m "update plugins"  # 锁定新版本
+```
+
+### 添加新插件
+
+```bash
+cd ~/.vim
+git submodule add <plugin-url> pack/all/start/<plugin-name>
+```
+
+### 移除插件
+
+```bash
+cd ~/.vim
+git submodule deinit pack/all/start/<plugin-name>
+git rm pack/all/start/<plugin-name>
+```
+
+## 依赖工具
+
+| 工具 | 用途 | 安装方式 |
+|------|------|----------|
+| fzf | 模糊查找器 | `brew install fzf` |
+| ripgrep (rg) | 全文搜索（fzf `:Rg` 后端） | `brew install ripgrep` |
+| Powerline 字体 | vim-airline 图标显示 | `brew install font-hack-nerd-font` |
+
+## 插件
 
 1. [rainbow](#luochen1990rainbow) — 彩虹括号
 2. [fzf / fzf.vim](#junegunnfzfvim) — 模糊查找器
@@ -151,7 +274,7 @@ let g:fzf_action = {
 
 ```vim
 nnoremap <leader>n :NERDTreeFocus<CR>   " 聚焦到 NERDTree 窗口
-nnoremap <Leader>t :NERDTreeToggle<CR>      " 切换 NERDTree 显示/隐藏
+nnoremap <leader>t :NERDTreeToggle<CR>  " 切换 NERDTree 显示/隐藏
 ```
 
 #### 窗口操作
@@ -326,17 +449,17 @@ CSS、SCSS、LESS、Stylus、HTML、SVG、JavaScript、Lua、Gitconfig 等。
 #### 配置
 
 ```vim
-set conceallevel=2                          " 语法隐藏级别（隐藏 Markdown 格式标记）
-let g:vim_markdown_folding_style_pythonic = 1  " 使用 Python 风格折叠
-let g:vim_markdown_override_foldtext = 0       " 不覆盖折叠文本显示
-let g:vim_markdown_no_default_key_mappings = 1 " 禁用默认键盘映射
-let g:vim_markdown_math = 1                    " 启用 LaTeX 数学公式支持
-let g:vim_markdown_frontmatter = 1             " YAML 前置元数据高亮
-let g:vim_markdown_toml_frontmatter = 1        " TOML 前置元数据高亮
-let g:vim_markdown_json_frontmatter = 1        " JSON 前置元数据高亮
-let g:vim_markdown_strikethrough = 1           " 删除线支持
-let g:vim_markdown_borderless_table = 1        " 无边框表格支持
-" let g:vim_markdown_new_list_item_indent = 2  " 列表新条目自动缩进宽度
+autocmd FileType markdown setlocal conceallevel=2   " 仅对 Markdown 启用语法隐藏
+let g:vim_markdown_folding_style_pythonic = 1       " 使用 Python 风格折叠
+let g:vim_markdown_override_foldtext = 0            " 不覆盖折叠文本显示
+let g:vim_markdown_no_default_key_mappings = 1      " 禁用默认键盘映射
+let g:vim_markdown_math = 1                         " 启用 LaTeX 数学公式支持
+let g:vim_markdown_frontmatter = 1                  " YAML 前置元数据高亮
+let g:vim_markdown_toml_frontmatter = 1             " TOML 前置元数据高亮
+let g:vim_markdown_json_frontmatter = 1             " JSON 前置元数据高亮
+let g:vim_markdown_strikethrough = 1                " 删除线支持
+let g:vim_markdown_borderless_table = 1             " 无边框表格支持
+" let g:vim_markdown_new_list_item_indent = 2       " 列表新条目自动缩进宽度
 ```
 
 ---
