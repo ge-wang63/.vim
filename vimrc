@@ -18,7 +18,7 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set how many lines of history VIM to remember
-set history=100	
+set history=100
 
 " Enable filetype Plugins
 filetype plugin on
@@ -26,13 +26,17 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
-au FocusGained,BufEnter * silent! checktime
+augroup vimrc_config
+  autocmd!
+  autocmd FocusGained,BufEnter * silent! checktime
+  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee,*.md :call CleanExtraSpaces()
+augroup END
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = "\<Space>"
 
-"esc is too far away 
+"esc is too far away
 inoremap jj <esc>
 vnoremap jj <esc>
 
@@ -114,17 +118,13 @@ syntax enable
 " set regular expression engine automatically
 set regexpengine=0
 
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == "gnome-terminal"
-	set t_CO=256
-endif
+set t_Co=256
+set background=dark
 
 try
     colorscheme solarized
 catch
 endtry
-
-set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -177,7 +177,7 @@ set si
 set wrap
 
 " Share clipboard
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -205,7 +205,10 @@ map <Up> <Nop>
 map <Down> <Nop>
 map <Left> <Nop>
 map <Right> <Nop>
-
+imap <Up> <Nop>
+imap <Down> <Nop>
+imap <Left> <Nop>
+imap <Right> <Nop>
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -215,6 +218,3 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee,*.md :call CleanExtraSpaces()
-endif

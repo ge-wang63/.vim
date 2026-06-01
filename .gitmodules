@@ -1,45 +1,45 @@
 [submodule "pack/all/start/rainbow"]
 	path = pack/all/start/rainbow
-	url = git@github.com:luochen1990/rainbow.git
+	url = https://github.com/luochen1990/rainbow.git
 [submodule "pack/all/start/fzf"]
 	path = pack/all/start/fzf
-	url = git@github.com:junegunn/fzf.git
+	url = https://github.com/junegunn/fzf.git
 [submodule "pack/all/start/fzf.vim"]
 	path = pack/all/start/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
+	url = https://github.com/junegunn/fzf.vim.git
 [submodule "pack/all/start/vim-colors-solarized"]
 	path = pack/all/start/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "pack/all/start/vim-css-color"]
 	path = pack/all/start/vim-css-color
-	url = git@github.com:ap/vim-css-color.git
+	url = https://github.com/ap/vim-css-color.git
 [submodule "pack/all/start/vim-peekaboo"]
 	path = pack/all/start/vim-peekaboo
-	url = git@github.com:junegunn/vim-peekaboo.git
+	url = https://github.com/junegunn/vim-peekaboo.git
 [submodule "pack/all/start/vim-polyglot"]
 	path = pack/all/start/vim-polyglot
-	url = git@github.com:sheerun/vim-polyglot.git
+	url = https://github.com/sheerun/vim-polyglot.git
 [submodule "pack/all/start/vim-airline"]
 	path = pack/all/start/vim-airline
-	url = git@github.com:vim-airline/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline.git
 [submodule "pack/all/start/tabular"]
 	path = pack/all/start/tabular
-	url = git@github.com:godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "pack/all/start/nerdtree"]
 	path = pack/all/start/nerdtree
-	url = git@github.com:preservim/nerdtree.git
+	url = https://github.com/preservim/nerdtree.git
 [submodule "pack/all/start/vim-airline-themes"]
 	path = pack/all/start/vim-airline-themes
-	url = git@github.com:vim-airline/vim-airline-themes.git
+	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "pack/all/start/vim-markdown"]
 	path = pack/all/start/vim-markdown
-	url = git@github.com:preservim/vim-markdown.git
+	url = https://github.com/preservim/vim-markdown.git
 [submodule "pack/all/start/vim-yoink"]
 	path = pack/all/start/vim-yoink
-	url = git@github.com:svermeulen/vim-yoink.git
+	url = https://github.com/svermeulen/vim-yoink.git
 [submodule "pack/all/start/vim-surround"]
 	path = pack/all/start/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "pack/all/start/vim-markdown-toc"]
 	path = pack/all/start/vim-markdown-toc
-	url = git@github.com:mzlogin/vim-markdown-toc.git
+	url = https://github.com/mzlogin/vim-markdown-toc.git

@@ -61,12 +61,12 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " >> NERDTree start >>
 " mappings
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <Leader>t :NERDTreeToggle<CR>
 " nnoremap <C-f> :NERDTreeFind<CR>
 " << NERDTree end <<
 
 " >> vim-markdown start >>
-set conceallevel=2
+autocmd FileType markdown setlocal conceallevel=2
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_override_foldtext = 0
 let g:vim_markdown_no_default_key_mappings = 1
