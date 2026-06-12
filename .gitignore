@@ -9,3 +9,7 @@
 *.swo
 *~
 .netrwhist
+.worktrees/
+tags
+cscope.*
+Session.vim
