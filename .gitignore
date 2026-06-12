@@ -4,6 +4,9 @@
 # Claude Code
 .claude/
 
+# Hermes Agent
+.hermes/
+
 # Vim
 *.swp
 *.swo
