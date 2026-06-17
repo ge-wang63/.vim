@@ -1,4 +1,0 @@
-# Agent 专属文件 — 合并时始终丢弃（取 main 侧版本）
-CLAUDE.md      merge=discard
-AGENTS.md      merge=discard
-CODEX.md       merge=discard
