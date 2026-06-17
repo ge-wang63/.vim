@@ -1,11 +1,27 @@
 # macOS
 .DS_Store
 
-# Claude Code
+# Agent — Claude Code
 .claude/
 
-# Hermes Agent
+# Agent — Codex
+.codex/*
+!.codex/config.toml
+!.codex/hooks.json
+!.codex/rules/**
+.codex/cache/
+.codex/logs/
+.codex/sessions/
+.codex/memories/
+
+# Agent — Hermes
 .hermes/
+SOUL.md
+
+# Local & secrets
+*.local.*
+.env
+.env.*
 
 # Vim
 *.swp
