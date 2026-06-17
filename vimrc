@@ -209,7 +209,7 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 imap <Left> <Nop>
 imap <Right> <Nop>
-" Delete trailing white space on save, useful for some filetypes ;)
+" Delete trailing white space on save, useful for some filetypes ;
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
