@@ -43,17 +43,17 @@
 
 - **Vim 8+ / Neovim**（需支持 `packpath`）
 - **Git**（用于克隆仓库和 Submodule）
-- **fzf** 命令行工具 — fzf.vim 模糊搜索依赖
+- **fzf** — 模糊查找器，fzf.vim 插件依赖
   - macOS: `brew install fzf`
   - Debian/Ubuntu: `sudo apt install fzf`
   - Fedora: `sudo dnf install fzf`
   - Arch: `sudo pacman -S fzf`
-- **ripgrep (rg)** — fzf `:Rg` 全文搜索后端
+- **ripgrep (rg)** — 全文搜索，fzf `:Rg` 命令后端
   - macOS: `brew install ripgrep`
   - Debian/Ubuntu: `sudo apt install ripgrep`
   - Fedora: `sudo dnf install ripgrep`
   - Arch: `sudo pacman -S ripgrep`
-- **Powerline 字体**：推荐安装 [Nerd Font](https://www.nerdfonts.com/) 系列字体，确保 vim-airline 图标正常显示
+- **Powerline 字体** — vim-airline 图标显示，推荐安装 [Nerd Font](https://www.nerdfonts.com/) 系列
 
 ### 首次安装
 
@@ -95,7 +95,7 @@ git submodule status        # 查看所有插件当前版本
 ```bash
 cd ~/.vim
 git submodule update --remote --recursive   # 更新所有插件到上游最新版
-git add -A && git commit -m "update plugins"  # 锁定新版本
+git add pack/all/start/ && git commit -m "plugins: update all submodules"
 ```
 
 ### 添加新插件
@@ -113,30 +113,7 @@ git submodule deinit pack/all/start/<plugin-name>
 git rm pack/all/start/<plugin-name>
 ```
 
-## 依赖工具
-
-| 工具 | 用途 | 安装方式 |
-|------|------|----------|
-| fzf | 模糊查找器 | `brew install fzf` / `sudo apt install fzf` |
-| ripgrep (rg) | 全文搜索（fzf `:Rg` 后端） | `brew install ripgrep` / `sudo apt install ripgrep` |
-| Powerline 字体 | vim-airline 图标显示 | 安装 [Nerd Font](https://www.nerdfonts.com/) |
-
 ## 插件
-
-1. [rainbow](#luochen1990rainbow) — 彩虹括号
-2. [fzf.vim](#junegunnfzfvim) — 模糊查找器
-3. [nerdtree](#preservimnerdtree) — 文件树浏览器
-4. [vim-airline](#vim-airline--vim-airline-themes) — 状态栏/标签栏
-5. [vim-colors-solarized](#altercationvim-colors-solarized) — Solarized 配色主题
-6. [vim-css-color](#apvim-css-color) — CSS 颜色预览
-7. [vim-polyglot](#sheerunvim-polyglot) — 多语言语法包
-8. [vim-markdown](#preservimvim-markdown) — Markdown 语法支持
-9. [vim-yoink](#svermeulenvim-yoink) — 粘贴历史管理
-10. [vim-peekaboo](#junegunnvim-peekaboo) — 寄存器预览
-11. [vim-surround](#tpopevim-surround) — 环绕字符操作
-12. [tabular](#godlygeektabular) — 文本对齐
-
----
 
 ### luochen1990/rainbow
 
@@ -148,41 +125,9 @@ git rm pack/all/start/<plugin-name>
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 ```
 
-```vim
-let g:rainbow_conf = {
-    \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-    \ 'guis': [''],
-    \ 'cterms': [''],
-    \ 'operators': '_,_',
-    \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \ 'separately': {
-    \     '*': {},
-    \     'markdown': {
-    \         'parentheses_options': 'containedin=markdownCode contained', " enable rainbow for code blocks only
-    \     },
-    \     'lisp': {
-    \         'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], " lisp needs more colors
-    \     },
-    \     'haskell': {
-    \         'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
-    \     },
-    \     'vim': {
-    \         'parentheses_options': 'containedin=vimFuncBody', " enable rainbow inside vim function body
-    \     },
-    \     'perl': {
-    \         'syn_name_prefix': 'perlBlockFoldRainbow',
-    \     },
-    \     'stylus': {
-    \         'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'], " vim-css-color compatibility
-    \     },
-    \     'css': 0, " disable for css files
-    \     'nerdtree': 0, " rainbow conflicts with NERDTree
-    \ }
-\}
-```
+完整配置（含各语言适配、NERDTree 兼容等）见 `plugin/plugins.vim`。
 
-- **guifgs**: GUI 界面括号颜色列表，按顺序循环使用
+配置项说明：
 - **guis**: GUI 样式列表 (:h highlight-gui)
 - **ctermfgs**: 终端下括号颜色列表
 - **cterms**: 终端样式列表 (:h highlight-cterm)

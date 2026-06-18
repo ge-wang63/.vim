@@ -60,7 +60,7 @@ set ruler
 set cmdheight=1
 
 " A buffer becomes hidden when it is abandoned
-set hid
+set hidden
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
@@ -79,7 +79,7 @@ set hlsearch
 set incsearch
 
 " Disable highlight when <esc> is pressed double
-map <esc><esc> :noh<return><esc>
+nnoremap <esc><esc> :noh<return><esc>
 
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
@@ -184,10 +184,10 @@ set clipboard+=unnamed
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Show header tabline
 set showtabline=2
@@ -201,14 +201,14 @@ set splitright
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable arrow keys
-map <Up> <Nop>
-map <Down> <Nop>
-map <Left> <Nop>
-map <Right> <Nop>
-imap <Up> <Nop>
-imap <Down> <Nop>
-imap <Left> <Nop>
-imap <Right> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
 " Delete trailing white space on save, useful for some filetypes ;
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")

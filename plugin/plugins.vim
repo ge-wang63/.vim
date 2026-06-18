@@ -57,11 +57,12 @@ nnoremap <silent> <Leader>f :Rg<CR>
 " nnoremap <silent> <Leader>h: :History:<CR>
 " nnoremap <silent> <Leader>h/ :History/<CR>
 " << fzf end <<
-"
+
 " >> NERDTree start >>
 " mappings
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <Leader>t :NERDTreeToggle<CR>
+" <C-f> 已被 fzf 占用，NERDTree 改用 :NERDTreeFind 命令
 " nnoremap <C-f> :NERDTreeFind<CR>
 " << NERDTree end <<
 
@@ -79,7 +80,7 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_borderless_table = 1
 " << vim-markdown end <<
 
-">> Yoink start start >>
+">> Yoink start >>
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 nmap p <plug>(YoinkPaste_p)
@@ -87,4 +88,5 @@ nmap P <plug>(YoinkPaste_P)
 " Also replace the default gp with yoink paste so we can toggle paste in this case too
 nmap gp <plug>(YoinkPaste_gp)
 nmap gP <plug>(YoinkPaste_gP)
-"<< Yoink end end <<
+"<< Yoink end <<
+
